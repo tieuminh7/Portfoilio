@@ -1,0 +1,18 @@
+.fly-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+  position: fixed;
+}
+
+.fly-image {
+  position: absolute;
+  user-select: none;
+  opacity: 0.5;
+  transition: none;
+}

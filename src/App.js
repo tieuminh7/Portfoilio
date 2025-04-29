@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import About from "./components/About";
+import Project from "./components/Project";
+import Contact from "./components/Contact";
+import Introduction from "./components/Introduction";
 
 function App() {
+  const [language, setLanguage] = useState("en");
+
+  const toggleLanguage = () => {
+    setLanguage((prevLang) => (prevLang === "en" ? "vi" : "en"));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header language={language} toggleLanguage={toggleLanguage} />
+      <Introduction language={language} />
+      <About language={language} />
+      <Project language={language} />
+      <Contact language={language} />
     </div>
   );
 }
